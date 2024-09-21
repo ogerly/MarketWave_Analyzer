@@ -51,7 +51,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-bottom: 1rem;
         }
-        .github-section {
+        .github-section, .roadmap-section {
             background-color: #ecf0f1;
             border-radius: 5px;
             padding: 15px;
@@ -119,27 +119,27 @@
 <body>
     <header>
         <h1>MarketWave Analyzer</h1>
-        <p class="subtitle">Algorithmische Finanzmarktanalyse</p>
+        <p class="subtitle">Fortschrittliche Finanzmarktanalyse</p>
     </header>
 
     <main>
         <section>
             <h2>Über das Projekt</h2>
-            <p>MarketWave Analyzer ist ein Open-Source-Tool zur tiefgreifenden Analyse von Finanzmarktdaten. Wir nutzen fortschrittliche statistische Methoden und maschinelles Lernen, um Marktmuster zu identifizieren und zu quantifizieren.</p>
+            <p>MarketWave Analyzer ist ein Open-Source-Tool zur Analyse von Finanzmarktdaten. Aktuell nutzen wir statistische Methoden zur Identifizierung von Marktmustern, mit dem Ziel, in Zukunft fortschrittliche Techniken wie maschinelles Lernen zu integrieren.</p>
         </section>
 
         <section class="features">
             <div class="feature">
                 <h3>Datenanalyse</h3>
-                <p>Implementierung von Zeitreihenanalysetechniken, einschließlich ARIMA-Modelle und spektraler Analyse.</p>
+                <p>Implementierung von Zeitreihenanalysetechniken, mit Fokus auf gleitende Durchschnitte und deren Interpretationen.</p>
             </div>
             <div class="feature">
                 <h3>Musterkennung</h3>
-                <p>Einsatz von Machine Learning zur Identifizierung komplexer Marktmuster und Anomalien.</p>
+                <p>Algorithmen zur Erkennung von Trends, Spitzen und Bodenzonen basierend auf klassischen technischen Indikatoren.</p>
             </div>
             <div class="feature">
                 <h3>Visualisierung</h3>
-                <p>Interaktive, multidimensionale Grafiken mit Plotly für fortschrittliche Datenvisualisierung.</p>
+                <p>Interaktive Grafiken mit Plotly zur klaren Darstellung von Kursdaten und erkannten Mustern.</p>
             </div>
         </section>
 
@@ -149,11 +149,9 @@
             <ul>
                 <li><code>pandas</code> für Datenmanipulation</li>
                 <li><code>numpy</code> für numerische Berechnungen</li>
-                <li><code>scipy</code> für statistische Funktionen</li>
-                <li><code>scikit-learn</code> für Machine Learning</li>
                 <li><code>plotly</code> für Datenvisualisierung</li>
             </ul>
-            <p>Beispiel für gleitende Durchschnitte:</p>
+            <p>Beispiel für die Berechnung gleitender Durchschnitte:</p>
             <pre><code>import pandas as pd
 
 def calculate_ma(data, windows):
@@ -164,27 +162,37 @@ def calculate_ma(data, windows):
 df = calculate_ma(df, [9, 20, 50, 200])</code></pre>
         </section>
 
+        <section class="roadmap-section">
+            <h2>Roadmap</h2>
+            <p>Unsere Zukunftspläne für MarketWave Analyzer:</p>
+            <ul>
+                <li>Integration von ARIMA-Modellen für verbesserte Zeitreihenanalyse</li>
+                <li>Implementierung von Machine Learning-Algorithmen zur Mustererkennung</li>
+                <li>Entwicklung von neuronalen Netzwerken (LSTM) für Zeitreihenvorhersagen</li>
+                <li>Einbindung von Sentiment-Analyse aus Finanznachrichten</li>
+                <li>Untersuchung und Implementierung von Methoden zur Analyse der Fraktalstruktur von Finanzmärkten</li>
+                <li>Optimierung der Parameterauswahl für technische Indikatoren mittels genetischer Algorithmen</li>
+                <li>Erweiterung der Visualisierungsmöglichkeiten für komplexe Datenstrukturen</li>
+            </ul>
+        </section>
+
         <section class="github-section">
             <h2>Open Source auf GitHub</h2>
-            <p>MarketWave Analyzer ist ein kollaboratives Forschungsprojekt. Wir laden Entwickler, Datenwissenschaftler und Finanzexperten zur Mitarbeit ein.</p>
+            <p>MarketWave Analyzer ist ein kollaboratives Projekt. Wir laden Entwickler, Datenwissenschaftler und Finanzexperten zur Mitarbeit ein.</p>
             <ul>
-                <li>Erforschen Sie unsere Analysemodelle</li>
-                <li>Tragen Sie neue Algorithmen bei</li>
-                <li>Diskutieren Sie Forschungsansätze</li>
-                <li>Verbessern Sie Dokumentation und Tests</li>
+                <li>Erkunden Sie unseren aktuellen Code</li>
+                <li>Tragen Sie zur Weiterentwicklung bei</li>
+                <li>Diskutieren Sie Ideen und zukünftige Funktionen</li>
+                <li>Helfen Sie bei der Dokumentation und dem Testen</li>
             </ul>
             <p>Besuchen Sie unser Repository:</p>
             <a href="https://github.com/ogerly/MarketWave_Analyzer" target="_blank">GitHub: MarketWave Analyzer</a>
+            <p>Für Kontakt und Vorschläge erstellen Sie bitte ein Issue in unserem GitHub-Repository.</p>
         </section>
-
-        <section>
-            <h2>Forschungsschwerpunkte</h2>
-            <ul>
-                <li>Optimierung von MA-Parametern mit genetischen Algorithmen</li>
-                <li>Integration von Sentiment-Analyse aus Finanznachrichten</li>
-                <li>LSTM-Netzwerke für Zeitreihenvorhersagen</li>
-                <li>Untersuchung der Fraktalstruktur von Finanzmärkten</li>
-            </ul>
+        <section class="github-widget">
+            <h2>Projekt-Entwickler auf GitHub</h2>
+            <div class="github-card" data-github="ogerly" data-width="400" data-height="" data-theme="default"></div>
+            <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
         </section>
     </main>
 </body>
