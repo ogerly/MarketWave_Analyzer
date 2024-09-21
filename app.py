@@ -55,7 +55,8 @@ def detect_bottoms(df):
             abs(df['MA 100'].iloc[i] - df['MA 200'].iloc[i]),
             abs(df['MA 200'].iloc[i] - df['MA 400'].iloc[i]) if 'MA 400' in df.columns else 0
         ]
-        if all(dist / df['Preis'].iloc[i] < distance_threshold for dist in distances):
+        preis_i = df['Preis'].iloc[i]
+        if all(dist / preis_i < distance_threshold for dist in distances):
             # Prüfen, ob MA20 die höheren MAs von unten nach oben durchbricht
             ma20_crossed_above = all(
                 df['MA 20'].iloc[i] > df[ma].iloc[i] and df['MA 20'].iloc[i - 1] <= df[ma].iloc[i - 1]
