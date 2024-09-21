@@ -3,121 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketWave Analyzer - Fortschrittliche Kursanalyse</title>
+    <title>MarketWave Analyzer - Finanzmarktanalyse</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
             padding: 20px;
+            background-color: #f4f4f4;
+            font-size: 16px;
         }
         header {
-            background-color: #003366;
+            background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
         h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
             margin-bottom: 0.5rem;
         }
         .subtitle {
             font-style: italic;
-            margin-bottom: 1rem;
-        }
-        .features {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
+            font-size: 1rem;
         }
         .feature {
-            flex-basis: 30%;
-            text-align: center;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #ff6600;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+            background-color: white;
+            padding: 15px;
             border-radius: 5px;
-            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
         }
         .github-section {
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 2rem;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 1rem;
         }
-        @media (max-width: 600px) {
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow-x: auto;
+            max-width: 100%;
+            display: inline-block;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            max-width: 100%;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        
+        /* Desktop Anpassungen */
+        @media (min-width: 768px) {
+            body {
+                max-width: 900px;
+                margin: 0 auto;
+                font-size: 18px;
+            }
             .features {
-                flex-direction: column;
-                align-items: center;
+                display: flex;
+                justify-content: space-between;
             }
             .feature {
-                flex-basis: 100%;
-                margin-bottom: 1rem;
+                flex-basis: 32%;
             }
-}
-
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>MarketWave Analyzer</h1>
-        <p class="subtitle">Fortschrittliche Kursanalyse für informierte Entscheidungen</p>
+        <p class="subtitle">Algorithmische Finanzmarktanalyse</p>
     </header>
 
     <main>
         <section>
-            <h2>Entdecken Sie die Kraft der Daten</h2>
-            <p>Der MarketWave Analyzer ist ein leistungsstarkes Tool zur Analyse von Kursdaten verschiedener Finanzinstrumente. Mit unserer fortschrittlichen Technologie können Sie Markttrends erkennen, potenzielle Einstiegs- und Ausstiegspunkte identifizieren und fundierte Handelsentscheidungen treffen.</p>
+            <h2>Über das Projekt</h2>
+            <p>MarketWave Analyzer ist ein Open-Source-Tool zur tiefgreifenden Analyse von Finanzmarktdaten. Wir nutzen fortschrittliche statistische Methoden und maschinelles Lernen, um Marktmuster zu identifizieren und zu quantifizieren.</p>
         </section>
 
         <section class="features">
             <div class="feature">
-                <h3>Flexible Analyse</h3>
-                <p>Analysieren Sie Kursdaten von Kryptowährungen, Aktien, Rohstoffen und mehr.</p>
+                <h3>Datenanalyse</h3>
+                <p>Implementierung von Zeitreihenanalysetechniken, einschließlich ARIMA-Modelle und spektraler Analyse.</p>
             </div>
             <div class="feature">
                 <h3>Musterkennung</h3>
-                <p>Identifizieren Sie automatisch wichtige Marktmuster und Trendwenden.</p>
+                <p>Einsatz von Machine Learning zur Identifizierung komplexer Marktmuster und Anomalien.</p>
             </div>
             <div class="feature">
-                <h3>Visuelle Darstellung</h3>
-                <p>Nutzen Sie interaktive Diagramme für eine intuitive Datenvisualisierung.</p>
+                <h3>Visualisierung</h3>
+                <p>Interaktive, multidimensionale Grafiken mit Plotly für fortschrittliche Datenvisualisierung.</p>
             </div>
         </section>
 
         <section>
-            <h2>Warum MarketWave Analyzer?</h2>
+            <h2>Technische Details</h2>
+            <p>MarketWave Analyzer nutzt folgende Python-Bibliotheken:</p>
             <ul>
-                <li>Einfach zu bedienende Benutzeroberfläche</li>
-                <li>Anpassbare Indikatoren und gleitende Durchschnitte</li>
-                <li>Automatisierte Signalerkennung für Kauf- und Verkaufsgelegenheiten</li>
-                <li>Detaillierte Gewinn- und Verlustberechnungen</li>
-                <li>Regelmäßige Updates und Verbesserungen</li>
+                <li><code>pandas</code> für Datenmanipulation</li>
+                <li><code>numpy</code> für numerische Berechnungen</li>
+                <li><code>scipy</code> für statistische Funktionen</li>
+                <li><code>scikit-learn</code> für Machine Learning</li>
+                <li><code>plotly</code> für Datenvisualisierung</li>
             </ul>
+            <p>Beispiel für gleitende Durchschnitte:</p>
+            <pre><code>import pandas as pd
+
+def calculate_ma(data, windows):
+    for window in windows:
+        data[f'MA_{window}'] = data['Close'].rolling(window=window).mean()
+    return data
+
+df = calculate_ma(df, [9, 20, 50, 200])</code></pre>
         </section>
 
         <section class="github-section">
             <h2>Open Source auf GitHub</h2>
-            <p>MarketWave Analyzer ist ein Open-Source-Projekt, das von einer engagierten Gemeinschaft von Entwicklern und Finanzexperten unterstützt wird. Wir glauben an Transparenz und kollaborative Entwicklung.</p>
+            <p>MarketWave Analyzer ist ein kollaboratives Forschungsprojekt. Wir laden Entwickler, Datenwissenschaftler und Finanzexperten zur Mitarbeit ein.</p>
             <ul>
-                <li>Erkunden Sie den Quellcode</li>
-                <li>Tragen Sie zur Weiterentwicklung bei</li>
-                <li>Melden Sie Probleme oder schlagen Sie neue Funktionen vor</li>
-                <li>Lernen Sie von der Community und teilen Sie Ihr Wissen</li>
+                <li>Erforschen Sie unsere Analysemodelle</li>
+                <li>Tragen Sie neue Algorithmen bei</li>
+                <li>Diskutieren Sie Forschungsansätze</li>
+                <li>Verbessern Sie Dokumentation und Tests</li>
             </ul>
-            <p>Besuchen Sie unser GitHub-Repository, um mehr zu erfahren und Teil unserer wachsenden Community zu werden!</p>
-            <a href="https://github.com/yourusername/marketwave-analyzer" class="cta-button" target="_blank">Zum GitHub-Projekt</a>
+            <p>Besuchen Sie unser Repository:</p>
+            <a href="https://github.com/yourusername/marketwave-analyzer" target="_blank">GitHub: MarketWave Analyzer</a>
         </section>
 
         <section>
-            <h2>Starten Sie noch heute!</h2>
-            <p>Erleben Sie die Vorteile des MarketWave Analyzers und treffen Sie fundiertere Handelsentscheidungen.</p>
-            <a href="#" class="cta-button">Jetzt kostenlos testen</a>
+            <h2>Forschungsschwerpunkte</h2>
+            <ul>
+                <li>Optimierung von MA-Parametern mit genetischen Algorithmen</li>
+                <li>Integration von Sentiment-Analyse aus Finanznachrichten</li>
+                <li>LSTM-Netzwerke für Zeitreihenvorhersagen</li>
+                <li>Untersuchung der Fraktalstruktur von Finanzmärkten</li>
+            </ul>
         </section>
     </main>
 </body>
