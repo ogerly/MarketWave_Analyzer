@@ -3,6 +3,11 @@
 
 Dieses Python-Skript analysiert historische Bitcoin-Kursdaten mithilfe von gleitenden Durchschnitten (Moving Averages, MAs). Es erkennt Muster wie Bodenzonen, Spitzen, Auf- und Abwärtstrends sowie Kauf- und Verkaufsignale.
 
+
+![Bildschirmfoto vom 2024-09-21 14-57-06](https://github.com/user-attachments/assets/c09f979e-6103-4ec0-8bc4-66fa8c59b7c2)
+
+
+
 ## Funktionen
 
 1. **Datenverarbeitung**: 
