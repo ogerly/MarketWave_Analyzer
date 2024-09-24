@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarketWave Analyzer - Finanzmarktanalyse</title>
     <style>
+        /* Bisheriges CSS */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,16 +28,16 @@
             margin-bottom: 1rem;
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
         h2 {
-            font-size: 1.4rem;
+            font-size: 2rem;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
         }
@@ -51,7 +52,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             margin-bottom: 1rem;
         }
-        .github-section, .roadmap-section {
+        .github-section, .roadmap-section, .blog-section {
             background-color: #ecf0f1;
             border-radius: 5px;
             padding: 15px;
@@ -89,7 +90,22 @@
         section {
             margin-bottom: 2rem;
         }
-        
+        .roadmap {
+            margin-top: 1rem;
+        }
+        .roadmap-item {
+            background-color: white;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .roadmap-item.completed {
+            border-left-color: #2ecc71;
+        }
+        .roadmap-item h4 {
+            margin-top: 0;
+        }
         /* Desktop Anpassungen */
         @media (min-width: 768px) {
             body {
@@ -104,15 +120,6 @@
             .feature {
                 flex-basis: 32%;
             }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-            h3 {
-                font-size: 1.5rem;
-            }
         }
     </style>
 </head>
@@ -125,21 +132,21 @@
     <main>
         <section>
             <h2>Über das Projekt</h2>
-            <p>MarketWave Analyzer ist ein Open-Source-Tool zur Analyse von Finanzmarktdaten. Aktuell nutzen wir statistische Methoden zur Identifizierung von Marktmustern, mit dem Ziel, in Zukunft fortschrittliche Techniken wie maschinelles Lernen zu integrieren.</p>
+            <p>MarketWave Analyzer ist ein Open-Source-Tool zur Analyse von Finanzmarktdaten. Wir nutzen statistische Methoden und maschinelles Lernen zur Identifizierung von Marktmustern, mit dem Ziel, ein umfassendes und interaktives Analysewerkzeug zu entwickeln.</p>
         </section>
 
         <section class="features">
             <div class="feature">
                 <h3>Datenanalyse</h3>
-                <p>Implementierung von Zeitreihenanalysetechniken, mit Fokus auf gleitende Durchschnitte und deren Interpretationen.</p>
+                <p>Implementierung von Zeitreihenanalysetechniken, mit Fokus auf gleitende Durchschnitte, ARIMA-Modelle und deren Interpretationen.</p>
             </div>
             <div class="feature">
                 <h3>Musterkennung</h3>
-                <p>Algorithmen zur Erkennung von Trends, Spitzen und Bodenzonen basierend auf klassischen technischen Indikatoren.</p>
+                <p>Algorithmen zur Erkennung von Trends, Spitzen und Bodenzonen basierend auf technischen Indikatoren und maschinellem Lernen.</p>
             </div>
             <div class="feature">
                 <h3>Visualisierung</h3>
-                <p>Interaktive Grafiken mit Plotly zur klaren Darstellung von Kursdaten und erkannten Mustern.</p>
+                <p>Interaktive Grafiken mit Plotly und Dash zur klaren Darstellung von Kursdaten, Prognosen und erkannten Mustern.</p>
             </div>
         </section>
 
@@ -149,43 +156,64 @@
             <ul>
                 <li><code>pandas</code> für Datenmanipulation</li>
                 <li><code>numpy</code> für numerische Berechnungen</li>
-                <li><code>plotly</code> für Datenvisualisierung</li>
+                <li><code>plotly</code> und <code>Dash</code> für Datenvisualisierung und interaktive Anwendungen</li>
+                <li><code>statsmodels</code> für statistische Modellierung (z.B. ARIMA)</li>
+                <li><code>scikit-learn</code> für maschinelles Lernen</li>
             </ul>
-            <p>Beispiel für die Berechnung gleitender Durchschnitte:</p>
-            <pre><code>import pandas as pd
+            <p>Beispiel für die Integration des ARIMA-Modells:</p>
+            <pre><code>from statsmodels.tsa.arima.model import ARIMA
 
-def calculate_ma(data, windows):
-    for window in windows:
-        data[f'MA_{window}'] = data['Close'].rolling(window=window).mean()
-    return data
-
-df = calculate_ma(df, [9, 20, 50, 200])</code></pre>
+def arima_forecast(timeseries, order=(1,1,1), steps=5):
+    model = ARIMA(timeseries, order=order)
+    model_fit = model.fit()
+    forecast = model_fit.forecast(steps=steps)
+    return forecast
+</code></pre>
         </section>
 
         <section class="roadmap-section">
             <h2>Roadmap</h2>
-            <p>Unsere Zukunftspläne für MarketWave Analyzer:</p>
-            <ul>
-                <li>Integration von ARIMA-Modellen für verbesserte Zeitreihenanalyse</li>
-                <li>Implementierung von Machine Learning-Algorithmen zur Mustererkennung</li>
-                <li>Entwicklung von neuronalen Netzwerken (LSTM) für Zeitreihenvorhersagen</li>
-                <li>Einbindung von Sentiment-Analyse aus Finanznachrichten</li>
-                <li>Untersuchung und Implementierung von Methoden zur Analyse der Fraktalstruktur von Finanzmärkten</li>
-                <li>Optimierung der Parameterauswahl für technische Indikatoren mittels genetischer Algorithmen</li>
-                <li>Erweiterung der Visualisierungsmöglichkeiten für komplexe Datenstrukturen</li>
-            </ul>
+            <p>Unsere Roadmap für die Weiterentwicklung von MarketWave Analyzer:</p>
+            <div class="roadmap">
+                <div class="roadmap-item completed">
+                    <h4>1. Integration von ARIMA-Modellen für verbesserte Zeitreihenanalyse</h4>
+                    <p>Wir haben ARIMA-Modelle implementiert, um Trends und Muster in Zeitreihendaten zu erkennen und Prognosen zu erstellen.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>2. Implementierung von Machine Learning-Algorithmen zur Mustererkennung</h4>
+                    <p>Geplant ist der Einsatz von ML-Algorithmen wie Random Forests und SVMs zur Erkennung komplexer Muster.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>3. Entwicklung von neuronalen Netzwerken (LSTM) für Zeitreihenvorhersagen</h4>
+                    <p>LSTM-Netzwerke sollen eingesetzt werden, um langfristige Abhängigkeiten in Zeitreihendaten zu modellieren.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>4. Einbindung von Sentiment-Analyse aus Finanznachrichten</h4>
+                    <p>Analyse von Finanznachrichten und Social Media, um Marktstimmungen zu quantifizieren.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>5. Untersuchung und Implementierung von Methoden zur Analyse der Fraktalstruktur von Finanzmärkten</h4>
+                    <p>Verwendung von Fraktalanalyse, um die Selbstähnlichkeit und Skalierungseigenschaften von Finanzzeitreihen zu untersuchen.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>6. Optimierung der Parameterauswahl für technische Indikatoren mittels genetischer Algorithmen</h4>
+                    <p>Einsatz genetischer Algorithmen zur automatisierten Optimierung von Indikatorparametern und Handelsstrategien.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>7. Erweiterung der Visualisierungsmöglichkeiten für komplexe Datenstrukturen</h4>
+                    <p>Entwicklung erweiterter Visualisierungen, einschließlich interaktiver Dashboards und 3D-Plots.</p>
+                </div>
+            </div>
         </section>
-
 
         <section class="blog-section">
             <h2>Blog</h2>
             <article>
-                <h3>Neue Erkenntnisse: Integration interaktiver Handelsfunktionen</h3>
-                <p><em>Veröffentlicht am 21. September 2024</em></p>
-                <p>In unseren jüngsten Arbeiten haben wir die Möglichkeit implementiert, direkt im Analyse-Tool Kauf- und Verkaufspunkte manuell zu setzen. Diese Punkte sind interaktiv verschiebbar und löschbar, was eine dynamische Anpassung der Handelsstrategien ermöglicht.</p>
-                <p>Wir haben festgestellt, dass diese Funktionalität es Benutzern ermöglicht, die Auswirkungen ihrer Handelsentscheidungen in Echtzeit zu beobachten. Durch die Live-Berechnung von Handelsgewinnen und die Aktualisierung der Kontostände können Strategien effektiv getestet und optimiert werden.</p>
-                <p>Ein weiterer Fokus lag auf der Fehlerbehebung und der Verbesserung der Benutzerfreundlichkeit. Wir haben Anpassungen vorgenommen, um Fehlermeldungen zu beheben und die Anwendung stabiler zu gestalten. Dazu gehörte die Aktualisierung von Import-Anweisungen und die Sicherstellung der Kompatibilität mit den neuesten Versionen der verwendeten Bibliotheken.</p>
-                <p>Diese Fortschritte sind ein wichtiger Schritt auf unserer Roadmap, um ein umfassendes und benutzerfreundliches Analyse-Tool zu entwickeln.</p>
+                <h3>Neue Erkenntnisse: Integration interaktiver Handelsfunktionen und ARIMA-Modelle</h3>
+                <p><em>Veröffentlicht am 22. September 2024</em></p>
+                <p>Wir haben erfolgreich ARIMA-Modelle in unser Analyse-Tool integriert. Dadurch können wir kurzfristige Prognosen erstellen und Handelssignale besser bestätigen. Durch die Kombination von gleitenden Durchschnitten und ARIMA-Modellen erhöhen wir die Zuverlässigkeit unserer Signale.</p>
+                <p>Des Weiteren haben wir interaktive Funktionen implementiert, die es ermöglichen, Kauf- und Verkaufspunkte manuell zu setzen und die Auswirkungen auf die Handelsperformance in Echtzeit zu beobachten.</p>
+                <p>Diese Fortschritte sind wichtige Schritte auf unserer Roadmap und bringen uns unserem Ziel näher, ein umfassendes und benutzerfreundliches Analyse-Tool zu entwickeln.</p>
             </article>
         </section>
 
