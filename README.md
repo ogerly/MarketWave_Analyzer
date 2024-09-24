@@ -6,7 +6,15 @@
 
 **MarketWave Analyzer** ist ein umfassendes Open-Source-Tool zur Analyse von Finanzmarktdaten, insbesondere von Bitcoin (BTC). Das Projekt zielt darauf ab, verschiedene statistische Methoden, Zeitreihenanalysen und maschinelles Lernen zu integrieren, um ein leistungsfähiges Analysewerkzeug zu schaffen. Die einzelnen Komponenten werden schrittweise entwickelt und zusammengeführt, um ein vollständiges Analyse-Tool zu bilden.
 
-![MarketWave Analyzer Screenshot](https://github.com/ogerly/MarketWave_Analyzer/assets/c09f979e-6103-4ec0-8bc4-66fa8c59b7c2)
+app.py
+![Bildschirmfoto](https://github.com/user-attachments/assets/86165610-0190-47ab-9add-d4eb75d9c8f9)
+
+btc_analysis_tool.py
+![Bildschirmfoto](https://github.com/user-attachments/assets/08dec7a7-6544-4ff5-8d94-8704d05d875d)
+
+
+arima_test.py
+![Bildschirmfoto](https://github.com/user-attachments/assets/600e7f7d-8c2d-4f1a-9780-c3e9998fa65d)
 
 ---
 
