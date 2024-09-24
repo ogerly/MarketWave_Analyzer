@@ -1,112 +1,183 @@
-# MarketWave Analyzer
+# Aktualisierte README für das MarketWave Analyzer Projekt
 
-### Interaktive Kursanalyse mit gleitenden Durchschnitten
+## MarketWave Analyzer
 
-**MarketWave Analyzer** ist ein fortschrittliches Python-Tool zur Analyse historischer Bitcoin-Kursdaten unter Verwendung von gleitenden Durchschnitten (Moving Averages, MAs). Es bietet umfangreiche Funktionen zur Erkennung von Mustern wie Bodenzonen, Spitzen, Trendphasen sowie zur Generierung von Kauf- und Verkaufssignalen. Durch die Integration von interaktiven Elementen ermöglicht es Benutzern, Handelsstrategien zu simulieren und die Auswirkungen von Entscheidungen in Echtzeit zu beobachten.
+### Interaktive Kursanalyse mit gleitenden Durchschnitten und fortgeschrittenen Methoden
 
-![MarketWave Analyzer Screenshot](https://github.com/user-attachments/assets/c09f979e-6103-4ec0-8bc4-66fa8c59b7c2)
+**MarketWave Analyzer** ist ein umfassendes Open-Source-Tool zur Analyse von Finanzmarktdaten, insbesondere von Bitcoin (BTC). Das Projekt zielt darauf ab, verschiedene statistische Methoden, Zeitreihenanalysen und maschinelles Lernen zu integrieren, um ein leistungsfähiges Analysewerkzeug zu schaffen. Die einzelnen Komponenten werden schrittweise entwickelt und zusammengeführt, um ein vollständiges Analyse-Tool zu bilden.
+
+![MarketWave Analyzer Screenshot](https://github.com/ogerly/MarketWave_Analyzer/assets/c09f979e-6103-4ec0-8bc4-66fa8c59b7c2)
+
+---
 
 ## Funktionen
 
 1. **Datenverarbeitung**:
-   - **Flexible Datenquellen**: Unterstützung für tägliche und stündliche BTC-USD-Kursdaten.
-   - **Gleitende Durchschnitte**: Berechnung von MAs über benutzerdefinierte Zeiträume.
-   - **Interaktive Parametereingabe**: Anpassung von Analyseparametern während der Laufzeit.
+   - Unterstützung für tägliche und stündliche BTC-USD-Kursdaten.
+   - Flexibles Einlesen von Daten aus CSV-Dateien und APIs (z.B. Binance API).
 
-2. **Mustererkennung und Indikatoren**:
-   - **Erkennung von Trends**: Identifizierung von Auf- und Abwärtstrends basierend auf MAs.
-   - **Indikatoren**:
-     - **MA Distance**: Misst die durchschnittliche Distanz zwischen allen MAs.
-     - **Breakthrough Signal**: Erkennt Kreuzungen zwischen verschiedenen MAs.
-     - **Convergence Indicator**: Bewertet die Konvergenz der MAs.
+2. **Gleitende Durchschnitte und Indikatoren**:
+   - Berechnung von gleitenden Durchschnitten (MAs) über anpassbare Zeiträume.
+   - Berechnung von Abständen zwischen verschiedenen MAs.
+   - Implementierung von Indikatoren wie MA Distance, Breakthrough Signal und Convergence Indicator.
 
-3. **Interaktive Handelsfunktionalität**:
-   - **Manuelles Setzen von Kauf- und Verkaufspunkten**: Direkt im Diagramm durch Zeichnen von Linien.
-   - **Verschieben und Löschen von Punkten**: Anpassung der Handelsentscheidungen in Echtzeit.
-   - **Live-Berechnung von Handelsgewinnen**: Aktualisierung von Kontostand, BTC-Bestand und Gewinnen bei jeder Änderung.
+3. **Mustererkennung**:
+   - Erkennung von Bodenzonen und Spitzen.
+   - Identifizierung von Aufwärts- und Abwärtstrends.
+   - Generierung von Kauf- und Verkaufssignalen basierend auf MAs und anderen Indikatoren.
 
-4. **Gewinnberechnung**:
-   - **Simulierte Trades**: Basierend auf den gesetzten Kauf- und Verkaufspunkten.
-   - **Dynamische Kapitalverwaltung**: Investition des verfügbaren Kapitals bei jedem Kauf.
-   - **Gewinn- und Verlustrechnung**: Übersichtliche Darstellung pro Trade und kumulativ.
+4. **Zeitreihenanalyse mit ARIMA**:
+   - Verwendung von ARIMA-Modellen zur Prognose von Kursbewegungen.
+   - Bestätigung von Handelssignalen durch statistische Modelle.
 
-5. **Visualisierung**:
-   - **Interaktives Diagramm**:
-     - Darstellung des BTC-Kurses mit gleitenden Durchschnitten.
-     - Markierung von Kauf- und Verkaufspunkten.
-     - Visualisierung der Indikatoren und Entscheidungsbereiche.
-   - **Anpassbares Layout**: Möglichkeit, verschiedene Indikatoren und Zeiträume zu visualisieren.
+5. **Interaktive Handelsfunktionalität**:
+   - Manuelles Setzen, Verschieben und Löschen von Kauf- und Verkaufspunkten im Diagramm.
+   - Live-Berechnung von Handelsgewinnen und Aktualisierung von Kontoständen und Gewinnen in Echtzeit.
 
-## Installation
+6. **Visualisierung**:
+   - Interaktive Diagramme mit Plotly und Dash.
+   - Darstellung von Kursdaten, MAs, Handelssignalen und Indikatoren.
+   - Anpassbare Layouts und Responsive Design.
 
-1. **Erforderliche Bibliotheken installieren**:
+---
 
-   ```bash
-   pip install pandas numpy requests plotly dash
-   ```
+## Projektstruktur und Komponenten
 
-2. **Daten bereitstellen**:
+### 1. `btc_analysis_tool.py`
 
-   - Laden Sie die BTC-USD Tageskursdaten herunter und speichern Sie sie als `BTC__USD_daily.csv` im gleichen Verzeichnis wie das Skript.
+- **Beschreibung**: Hauptanwendung zur interaktiven Analyse von BTC-Kursdaten mit gleitenden Durchschnitten und Handelsfunktionalität.
+- **Funktionen**:
+  - Interaktives Setzen von Kauf- und Verkaufspunkten.
+  - Live-Berechnung von Handelsgewinnen.
+  - Visualisierung von Kursdaten und Indikatoren.
 
-3. **Skript herunterladen**:
+### 2. `arima_test.py`
 
-   - Laden Sie das Skript `btc_analysis_tool.py` aus dem Repository herunter.
+- **Beschreibung**: Skript zur Integration von ARIMA-Modellen in die Analyse.
+- **Funktionen**:
+  - Abrufen von stündlichen BTC-Daten über die Binance API.
+  - Überprüfung der Stationarität von Zeitreihen.
+  - Anpassung von ARIMA-Modellen und Prognose zukünftiger Kursbewegungen.
+  - Bestätigung von Handelssignalen durch ARIMA-Prognosen.
+
+### 3. `app.py`
+
+- **Beschreibung**: Erweiterung des Analyse-Tools mit zusätzlichen Mustererkennungsfunktionen.
+- **Funktionen**:
+  - Erkennung von Bodenzonen, Spitzen, Aufwärts- und Abwärtstrends.
+  - Generierung von Kauf- und Verkaufssignalen.
+  - Berechnung von potenziellen Gewinnen aus den erkannten Signalen.
+  - Visualisierung von Kursdaten, MAs und Abständen zwischen MAs.
+
+### 4. `index.html`
+
+- **Beschreibung**: Startseite des Projekts mit Informationen, Roadmap und Blog.
+- **Funktionen**:
+  - Vorstellung des Projekts und seiner Ziele.
+  - Darstellung der aktuellen Funktionen und zukünftigen Entwicklungen.
+  - Integration eines Blogs zur Dokumentation von Erkenntnissen und Fortschritten.
+  - Verlinkung zum GitHub-Repository und Einladung zur Mitarbeit.
+
+---
+
+## Roadmap
+
+Wir planen, die folgenden Komponenten und Funktionen schrittweise zu integrieren, um ein umfassendes Analyse-Tool zu erstellen:
+
+- **Integration von ARIMA-Modellen**: Verbesserung der Zeitreihenanalyse durch statistische Methoden.
+- **Implementierung von Machine Learning**: Einsatz von Algorithmen zur Mustererkennung und Vorhersage.
+- **Entwicklung von neuronalen Netzwerken (LSTM)**: Nutzung von Deep Learning für Zeitreihenvorhersagen.
+- **Sentiment-Analyse**: Analyse von Finanznachrichten zur Bewertung von Marktsentiment.
+- **Fraktalanalyse**: Untersuchung der Fraktalstruktur von Finanzmärkten.
+- **Optimierung mittels genetischer Algorithmen**: Automatische Anpassung von Parametern für technische Indikatoren.
+- **Erweiterte Visualisierung**: Entwicklung von komplexen Datenvisualisierungen zur Unterstützung der Analyse.
+
+---
 
 ## Verwendung
 
-1. **Anwendung starten**:
+### Voraussetzungen
+
+- **Python-Version**: 3.7 oder höher
+- **Erforderliche Bibliotheken**:
+
+  ```bash
+  pip install pandas numpy requests plotly dash statsmodels
+  ```
+
+### Datenbereitstellung
+
+- **Tägliche Daten**: Stellen Sie sicher, dass die Datei `BTC__USD_daily.csv` im gleichen Verzeichnis wie die Skripte vorhanden ist.
+- **Stündliche Daten**: `arima_test.py` lädt die Daten automatisch über die Binance API.
+
+### Ausführen der Anwendungen
+
+#### `btc_analysis_tool.py`
+
+1. Starten Sie die Anwendung:
 
    ```bash
    python btc_analysis_tool.py
    ```
 
-   - Die Dash-Anwendung startet und gibt eine URL aus (z.B. `http://127.0.0.1:8050/`).
-   - Öffnen Sie diese URL in Ihrem Webbrowser.
+2. Öffnen Sie die angegebene URL in Ihrem Webbrowser (z.B. `http://127.0.0.1:8050/`).
 
-2. **Investitionsbetrag festlegen**:
+3. Verwenden Sie die interaktiven Funktionen, um Kauf- und Verkaufspunkte zu setzen und die Handelsgewinne zu analysieren.
 
-   - Geben Sie im Feld "Investitionsbetrag (USD)" den Betrag ein, den Sie investieren möchten.
+#### `arima_test.py`
 
-3. **Kauf- und Verkaufspunkte setzen**:
+1. Führen Sie das Skript aus:
 
-   - **Kaufpunkt setzen**:
-     - Wählen Sie in der Werkzeugleiste des Diagramms das Linienzeichnungswerkzeug.
-     - Zeichnen Sie eine vertikale Linie an der Stelle, an der Sie kaufen möchten.
-     - Stellen Sie sicher, dass die Linie **grün** ist (Farbe kann in den Einstellungen des Zeichentools angepasst werden).
+   ```bash
+   python arima_test.py
+   ```
 
-   - **Verkaufspunkt setzen**:
-     - Zeichnen Sie eine vertikale Linie an der Stelle, an der Sie verkaufen möchten.
-     - Stellen Sie sicher, dass die Linie **rot** ist.
+2. Geben Sie den gewünschten Investitionsbetrag ein, wenn Sie dazu aufgefordert werden.
 
-   - **Punkte verschieben oder löschen**:
-     - Um einen Punkt zu verschieben, klicken Sie auf die Linie und ziehen Sie sie an die gewünschte Position.
-     - Um einen Punkt zu löschen, wählen Sie das Radiergummi-Werkzeug und klicken Sie auf die Linie.
+3. Das Skript generiert ein interaktives Diagramm mit den ARIMA-Prognosen und gibt den berechneten Gesamtgewinn aus.
 
-4. **Handelsinformationen beobachten**:
+#### `app.py`
 
-   - **Trade-Informationen**:
-     - Unter dem Diagramm wird eine Tabelle mit allen Trades angezeigt, inklusive Datum, Aktion, Preis, Menge, Balance und Gewinn.
-   - **Gesamtgewinn**:
-     - Der kumulative Gewinn aller Trades wird unter der Tabelle angezeigt und aktualisiert sich bei jeder Änderung.
+1. Führen Sie das Skript aus:
 
-5. **Anpassung der Parameter** (optional):
+   ```bash
+   python app.py
+   ```
 
-   - Sie können die MA-Perioden und andere Analyseparameter direkt im Code anpassen oder das Skript erweitern, um zusätzliche Eingabemöglichkeiten zu bieten.
+2. Geben Sie den gewünschten Investitionsbetrag ein, wenn Sie dazu aufgefordert werden.
+
+3. Das Skript generiert ein interaktives Diagramm mit den erkannten Mustern und gibt den berechneten Gesamtgewinn aus.
+
+---
 
 ## Anpassungsmöglichkeiten
 
 - **Gleitende Durchschnitte**:
-  - Passen Sie die Liste `ma_windows` im Code an, um andere Zeiträume für die MAs zu verwenden.
+  - Passen Sie die Liste `ma_windows` in den Skripten an, um andere Zeiträume für die MAs zu verwenden.
 
 - **Indikatoren und Entscheidungsregeln**:
-  - Modifizieren Sie die Schwellenwerte und Berechnungen in den Funktionen `calculate_ma_distance`, `calculate_breakthrough_signal` und `enhanced_decision_rule`, um die Analyse an Ihre Bedürfnisse anzupassen.
+  - Modifizieren Sie die Schwellenwerte und Berechnungen in den entsprechenden Funktionen, um die Analyse an Ihre Bedürfnisse anzupassen.
 
 - **Visualisierung**:
   - Fügen Sie weitere Diagramme oder Indikatoren hinzu, um zusätzliche Einblicke zu erhalten.
 
 - **Datenquellen**:
-  - Implementieren Sie die Funktion `get_hourly_data` mit einer gültigen API, um stündliche Daten zu verwenden.
+  - Passen Sie die Datenbeschaffung an, um andere Kryptowährungen oder Finanzinstrumente zu analysieren.
+
+---
+
+## Blog und Neueste Erkenntnisse
+
+Wir haben unsere neuesten Erkenntnisse und Fortschritte in unserem **Blog** dokumentiert. Hier teilen wir unsere Erfahrungen, diskutieren Herausforderungen und präsentieren Lösungen.
+
+- **Aktuelle Beiträge**:
+  - **Integration von ARIMA-Modellen**: Erfahrungen bei der Prognose von BTC-Kursen.
+  - **Interaktive Handelsfunktionen**: Entwicklung von Funktionen zum Setzen von Kauf- und Verkaufspunkten.
+  - **Fehlerbehebung und Optimierung**: Umgang mit Fehlermeldungen und Aktualisierung von Paketen.
+
+Wir werden den Blog regelmäßig mit neuen Erkenntnissen erweitern.
+
+---
 
 ## Wichtige Hinweise
 
@@ -119,30 +190,29 @@
 - **Eigenverantwortung**:
   - Bitte führen Sie eigene Recherchen durch und konsultieren Sie bei Bedarf einen Finanzberater, bevor Sie Handelsentscheidungen treffen.
 
-## Fehlersuche und Unterstützung
+---
 
-- **Bekannte Probleme**:
-  - **Fehlermeldung bezüglich `NoneType`**: Stellen Sie sicher, dass die `figure`-Variable korrekt initialisiert ist (siehe Codeanpassungen in den letzten Abschnitten).
-  - **Veraltete Pakete**: Aktualisieren Sie Ihre Dash-Version und passen Sie die Import-Anweisungen an (`from dash import dash_table`).
+## Open Source auf GitHub
 
-- **Unterstützung**:
-  - Bei Fragen oder Problemen können Sie sich an den Entwickler wenden oder ein Issue im Repository erstellen.
+MarketWave Analyzer ist ein kollaboratives Projekt. Wir laden Entwickler, Datenwissenschaftler und Finanzexperten zur Mitarbeit ein.
+
+- **Repository**: [GitHub: MarketWave Analyzer](https://github.com/ogerly/MarketWave_Analyzer)
+- **Beiträge**:
+  - Erkunden Sie unseren aktuellen Code.
+  - Tragen Sie zur Weiterentwicklung bei.
+  - Diskutieren Sie Ideen und zukünftige Funktionen.
+  - Helfen Sie bei der Dokumentation und dem Testen.
+
+Für Kontakt und Vorschläge erstellen Sie bitte ein Issue in unserem GitHub-Repository.
+
+---
 
 ## Lizenz
 
 Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der `LICENSE`-Datei.
 
-## Danksagung
-
-Vielen Dank an alle Mitwirkenden und Tester, die zur Entwicklung dieses Tools beigetragen haben.
-
 ---
 
-# Kryptowährungshandel mit Moving Averages und Breakthrough Signals
+ 
 
-Dieses Projekt bietet eine interaktive Analyseplattform für Kryptowährungen, die auf Moving Averages (MAs) und Breakthrough Signals basiert. Die Plattform ermöglicht es Benutzern, Trades zu setzen, zu verschieben oder zu löschen, und bietet eine visuelle Darstellung der Analyseergebnisse.
-
-## Installation
-
-1. **Python 3.8 oder höher**:
-   - Stellen Sie sicher, dass Sie Python 3.8 oder höher installiert haben. Weitere Informationen finden Sie unter <https://www.python.org/downloads/>.
+ 
