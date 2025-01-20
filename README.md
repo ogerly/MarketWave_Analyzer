@@ -1,5 +1,3 @@
-# Aktualisierte README für das MarketWave Analyzer Projekt
-
 ## MarketWave Analyzer
 
 ### Interaktive Kursanalyse mit gleitenden Durchschnitten und fortgeschrittenen Methoden
